@@ -1,0 +1,24 @@
+
+#プロジェクト作成
+(Old)mix phoenix.new player_phoenix
+(New)mix phx.new player_phoenix
+
+#データベース作成
+cd player_phoenix
+mix ecto.create
+psql -l
+
+#Phoenixの起動
+(Old)mix phoenix.server
+(New)mix phx.server
+
+#ジェネレイター実行 MVCパターンのファイルを自動作成
+(Old)mix phoenix.gen.html User users name:string team:string position:string
+(New)mix phx.gen.html Accounts User users name:string team:string position:string
+
+#ルーターファイルの編集
+#lib/player_web/router.ex:配下に以下追加
+resources "/users", UserController
+
+#マイグレーションの実行
+mix ecto.migrate

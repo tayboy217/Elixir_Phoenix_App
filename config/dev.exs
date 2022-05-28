@@ -2,7 +2,7 @@ import Config
 
 # Configure your database
 config :player, Player.Repo,
-  username: "postgres",
+  username: "postgres1",
   password: "postgres",
   database: "player_dev",
   hostname: "localhost",
